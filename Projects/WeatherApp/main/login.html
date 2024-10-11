@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<!-- <meta charset="UTF-8"> ensures that your webpage can correctly display a wide range of characters, 
+symbols, and letters from various languages without issues, making it essential for modern web development.-->
+
+<!--<meta name="viewport" content="width=device-width, initial-scale=1.0">  Makes the webpage's width match the device's 
+screen width. initial-scale=1.0  prevents automatic zooming, ensuring that users see the page at its true size. -->
+
+<!-- ../ in the path moves up one directory from main/ to WeatherApp/ -->
+
+<!-- The defer attribute tells the browser to load the JavaScript file in parallel with the HTML (non-blocking) and execute it only after 
+the HTML document has been completely parsed. This is particularly useful to prevent the browser from pausing HTML parsing while waiting 
+for the JavaScript file to load and execute. -->
+<!-- If a script needs to be executed immediately (e.g., it modifies content as the page loads or sets up critical logic early), 
+defer is not suitable.-->
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Weather App</title>
+        <link rel="stylesheet" href="../styles/login-style.css">
+        <script src="../js/js-login.js" defer></script>
+    </head>
+    <body>
+        <div class="login">
+            <h2>Welcome to the Weather App</h2>
+            <p>Please sign in and share your location to continue.</p>
+            <form id="login-form" action="weather.html" method="get">
+                <button type="submit" id="js-login-button">Sign In</button>
+            </form>
+            <p id="terms">By signing in you agree to share your location for the rest of the use of this application made by Kaan Kanadasi. Thank you for using this app.</p>
+        </div>
+    </body>
+</html>

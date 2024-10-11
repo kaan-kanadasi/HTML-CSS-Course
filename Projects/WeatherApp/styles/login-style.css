@@ -1,0 +1,113 @@
+/* border-box is commonly used to make layouts easier to manage, as it prevents 
+the padding and borders from unexpectedly affecting the element's size */
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background: linear-gradient(to bottom, rgb(26, 32, 85, 0.9), rgba(74, 82, 148, 0.9));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} 
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url(../images/background.png);
+    background-repeat: repeat;
+    background-size: 50px 50px;
+    opacity: 0.17;
+    z-index: 0;
+    animation: moveBackground 20s infinite; 
+}
+
+@keyframes moveBackground {
+    0% { background-position: 0 0 ; }
+    25% { background-position: 140px 0; }
+    50% { background-position: 0 70px; }
+    75% { background-position: 140px 70px; }
+    100% { background-position: 0 0; }
+}
+
+.login {
+    text-align: center;
+    color: white;
+    padding: 40px;
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.login h2 {
+    background-color: #111537;
+    margin-bottom: 50px;
+
+    position: absolute;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    margin-top:10px;
+    margin-bottom: 10px;
+    border-radius: 2px;
+    border: none;
+    width: 100%;
+}
+
+#js-login-button {
+    padding: 10px;
+    margin-top:20px;
+    border-radius: 2px;
+    border: none;
+    color: #1a2055;
+    background-color: whitesmoke;
+    cursor: pointer;
+    width: 100%;
+    z-index: 1;
+    font-weight: bold;
+}
+
+#js-login-button:hover {
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.15);
+    background-color: #1a2055;
+    color: whitesmoke;
+    transition: 0.3ms;
+}
+
+#terms {
+    position: fixed;
+    text-align: center;
+    bottom: 40px;
+    font-size: 10px;
+    font-weight: bold;
+    
+    left: 0;
+    right: 0;
+    margin: auto;
+
+    color: #8b8d9e;
+    z-index: 1;
+}

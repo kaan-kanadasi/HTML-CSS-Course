@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DOM</title>
+    </head>
+    <body>
+        <button>hello</button>
+        <button class="js-label">Second Button</button>
+
+        <script>
+            // we can have html elements inside JS
+            // DOM combines JS and HTML together
+            console.log(document.body);
+            /*
+            document.body.innerHTML = hello
+            // document object represents the web page
+            document.title = 'Document Object Model'
+            */
+
+            // when a HTML element is inside a JS, HTML element is converted into a java script object
+            console.log(typeof document.body); // body
+            console.log(document.body.innerHTML);
+
+            // lets us get any element from the page and put it inside JS
+            document.querySelector('button'); // this will get the first button element from the page and put it inside JS
+            console.log(document.querySelector('button')); // <button>hello</button>
+            console.log(document.querySelector('button').innerHTML); // hello
+
+            const buttonElem = document.querySelector('.js-label');
+
+        </script>
+    </body>
+</html>

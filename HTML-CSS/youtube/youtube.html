@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+
+<!-- block element - takes the entire line in their container-->
+<!-- inline-block element - only takes up as much space as needed -->
+<!-- inline element - appear within a line of text in their container-->
+
+<!-- div's are containers -->
+<html>
+    <head>
+        <title> YouTube </title>
+        <link rel="stylesheet" href="styles/general.css">
+        <link rel="stylesheet" href="styles/header.css">
+        <link rel="stylesheet" href="styles/video.css">
+        <link rel="stylesheet" href="styles/sidebar.css">
+    </head>
+    <body>
+        <div class="header">
+            <div class="left-section">
+                <img class="hamburger-menu" src="icons/hm-icon.svg">
+                <a href="https://www.youtube.com/"> <img class="youtube-logo" src="icons/yt-icon.svg"> </a>
+            </div>
+            <div class="middle-section">
+                <input class="search-bar" type="text" placeholder="Search">
+
+                <button class="search-button">
+                    <img class="search-icon" src="icons/search-icon.svg">
+                </button>
+                <button class="voice-search-button">
+                    <img class="voice-search-icon" src="icons/voice-icon.svg">
+                </button>
+            </div>
+            <div class="right-section">
+                <img class="upload-icon" src="icons/upload-icon.svg">
+                <img class="youtube-apps-icon" src="icons/yt-apps-icon.svg">
+                <img class="notifications-icon" src="icons/bell-icon.svg">
+                <img class="current-user-picture" src="icons/my-icon.jpg">
+            </div>
+        </div>
+
+        <div class="sidebar">
+            <div class="sidebar-link"> <img src="icons/home-icon.svg"> <div>Home</div> </div>
+            <div class="sidebar-link"> <img src="icons/explore-icon.svg"> <div>Explore</div> </div>
+            <div class="sidebar-link"> <img src="icons/sub-icon.svg"> <div>Subcriptions</div> </div>
+            <div class="sidebar-link"> <img src="icons/lib-icon.svg"> <div>Library</div> </div>
+        </div>
+
+        <div class="video-grid">
+            <div class="video-preview">
+                <div class="image-row">
+                    <img class="image" src="photo/image-youtube.avif">
+                    <div class="video-time">6:31:23</div>
+                </div>
+                <div class="video-info-grid">
+                    <div class="channel-picture">
+                        <img class="profile-picture" src="photo/profile1.jpg">
+                    </div>
+                    <div class="video-info">
+                        <p class="video-title">
+                            HTML & CSS Full Course
+                        </p>
+                        <p class="video-author">
+                            SuperSimpleDev
+                        </p>
+                        <p class="video-stats">
+                            12M views &#183; 2 years ago
+                        </p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="video-preview">
+                <div class="image-row">
+                    <img class="image" src="photo/MIT-youtube.avif">
+                    <div class="video-time">50:18</div>
+                </div>
+                <div class="video-info-grid">
+                    <div class="channel-picture">
+                        <img class="profile-picture" src="photo/profile2.jpg">
+                    </div>
+                    <div class="video-info">
+                        <p class="video-title">
+                            II. Data Structures and Dynamic Arrays
+                        </p>
+                        <p class="video-author">
+                            MIT OpenCourseWare
+                        </p>
+                        <p class="video-stats">
+                            526K views &#183; 3 years ago
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-preview">
+                <div class="image-row">
+                    <img class="image" src="photo/rick-youtube.avif">
+                    <div class="video-time">5:41</div>
+                </div>
+                <div class="video-info-grid">
+                    <div class="channel-picture">
+                        <img class="profile-picture" src="photo/profile3.jpg">
+                    </div>
+                    <div class="video-info">
+                        <p class="video-title">
+                            It's Never Too Late (If you're Willing To Do the Work)
+                        </p>
+                        <p class="video-author">
+                            Rick Beato
+                        </p>
+                        <p class="video-stats">
+                            727K views &#183; 1 month ago
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-preview">
+                <div class="image-row">
+                    <img class="image" src="photo/js-youtube.avif">
+                    <div class="video-time">15:30:39</div>
+                </div>
+                <div class="video-info-grid">
+                    <div class="channel-picture">
+                        <img class="profile-picture" src="photo/profile4.jpg">
+                    </div>
+                    <div class="video-info">
+                        <p class="video-title">
+                            From Zero to Full Stack: Master JavaScript and Create Dynamic Web Apps
+                        </p>
+                        <p class="video-author">
+                            HuXn WebDev 
+                        </p>
+                        <p class="video-stats">
+                            701K views &#183; 7 months ago
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-preview">
+                <div class="image-row">
+                    <img class="image" src="photo/us-youtube.avif">
+                    <div class="video-time">7:32</div>
+                </div>
+                <div class="video-info-grid">
+                    <div class="channel-picture">
+                        <img class="profile-picture" src="photo/profile5.jpg">
+                    </div>
+                    <div class="video-info">
+                        <p class="video-title">
+                            The man who rigged America's election maps
+                        </p>
+                        <p class="video-author">
+                            Vox
+                        </p>
+                        <p class="video-stats">
+                            2.4M views &#183; 4 years ago
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-preview">
+                <div class="image-row">
+                    <img class="image" src="photo/hack-youtube.avif">
+                    <div class="video-time">13:49</div>
+                </div>
+                <div class="video-info-grid">
+                    <div class="channel-picture">
+                        <img class="profile-picture" src="photo/profile6.jpg">
+                    </div>
+                    <div class="video-info">
+                        <p class="video-title">
+                            The Hack That Made China a Superpower: Operation Shady Rat
+                        </p>
+                        <p class="video-author">
+                            CyberNews
+                        </p>
+                        <p class="video-stats">
+                            1.3M views &#183; 11 months ago
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
