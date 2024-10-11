@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DOM</title>
+    </head>
+    <body>
+        <button>hello</button>
+        <button class="js-label">Second Button</button>
+
+        <script>
+            // arrays are a special type of object
+            [1, 'hello', True, {name: 'socks'}, [1, 2]]
+
+            const myArray = [10, 20, 30];
+            console.log(typeof myArray); // object
+            Array.isArray(myArray); // ture
+            myArray.length;
+            myArray.push('adds element at the end of the array')
+
+            /*
+            @param1 index we want to remove
+            @param2 number of values to remove
+            Modifies the Original Array - Returns An Array of Removed Elements
+            */
+            myArray.splice(3, 1); // myArray = [10, 20, 30], returns ['adds element at the end of the array']
+
+            /*
+            when you declare an array (or an object) with const, it means that the variable identifier cannot be reassigned 
+            to a different array or object. However, the contents of the array or object can still be modified.
+            */
+            const check = [10, 20, 30]; 
+            myArray.splice(2, 2); // returns empty array, [] with no change to the original array
+        </script>
+    </body>
+</html>
