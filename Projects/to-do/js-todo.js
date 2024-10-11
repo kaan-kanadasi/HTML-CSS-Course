@@ -22,7 +22,6 @@ function renderTodoList() {
     .innerHTML = todoListHTML;
 }
 
-
 function addTodo() {
     const inputElem = document.querySelector(".js-name-input");
     // retrieves the value entered in the selected input element
