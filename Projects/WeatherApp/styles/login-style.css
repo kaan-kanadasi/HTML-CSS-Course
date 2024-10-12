@@ -94,7 +94,7 @@ input[type="text"] {
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.15);
     background-color: #1a2055;
     color: whitesmoke;
-    transition: 0.3ms;
+    transition: 300ms ease-in;
 }
 
 #terms {

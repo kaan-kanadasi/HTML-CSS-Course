@@ -17,14 +17,14 @@ function renderTodoList() {
   document.querySelector('.js-todo-list')
     .innerHTML = todoListHTML;
 
-    // querySelectorAll gives out all of the delete buttons in contrast to querySelector which gives only the first delete button
-    document.querySelectorAll('.js-delete-todo-button')
-      .forEach((deleteButton, index) => {
-        deleteButton.addEventListener('click', () => {
-          todoList.splice(index, 1);
-          renderTodoList();
-        });
+  // querySelectorAll gives out all of the delete buttons in contrast to querySelector which gives only the first delete button
+  document.querySelectorAll('.js-delete-todo-button')
+    .forEach((deleteButton, index) => {
+      deleteButton.addEventListener('click', () => {
+        todoList.splice(index, 1);
+        renderTodoList();
       });
+    });
 }
 
 // same functionality as onclick=addTodo() in html
