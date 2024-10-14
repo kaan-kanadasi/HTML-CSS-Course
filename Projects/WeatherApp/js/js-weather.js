@@ -31,27 +31,6 @@ search.addEventListener('click', () => {
             const humidity = document.querySelector('.weather-details .humidity span');
             const wind = document.querySelector('.weather-details .wind span');
 
-            switch (json.weather[0].main) {
-                case 'Clear':
-                    image.src = 'images/sun.png';
-                    break;
-
-                case 'Rain':
-                    image.src = 'images/rain-clouds.png';
-                    break;
-
-                case 'Snow':
-                    image.src = 'images/snow.png';
-                    break;
-
-                case 'Clouds':
-                    image.src = 'images/clouds.png';
-                    break;
-
-                default:
-                    image.src = '';
-            }
-
             temperature.innerHTML = `${parseInt(json.main.temp)}<span>°C</span>`;
             description.innerHTML = `${json.weather[0].description}`;
             humidity.innerHTML = `${json.main.humidity}%`;

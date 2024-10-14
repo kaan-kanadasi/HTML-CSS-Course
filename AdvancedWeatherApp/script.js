@@ -13,7 +13,36 @@ const search = document.querySelector(".search");
 const btn = document.querySelector(".submit");
 const apiKey = '27742cdbc5018245c73fc948b357e609';
 
-let cityInput = "New Delhi";
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition, showError);
+    } else {
+        alert("Geolocation is not supported by this browser.");
+    }
+}
+
+function showPosition(position) {
+    const latitude = position.coords.latitude;
+    const longitude = position.coords.longitude;
+    fetchWeatherData(latitude, longitude);
+}
+
+function showError(error) {
+    switch (error.code) {
+        case error.PERMISSION_DENIED:
+            alert("User denied the request for Geolocation.");
+            break;
+        case error.POSITION_UNAVAILABLE:
+            alert("Location information is unavailable.");
+            break;
+        case error.TIMEOUT:
+            alert("The request to get user location timed out.");
+            break;
+        case error.UNKNOWN_ERROR:
+            alert("An unknown error occurred.");
+            break;
+    }
+}
 
 form.addEventListener("submit", (e) => {
     if (search.value.length == 0) {
@@ -40,8 +69,17 @@ function dayofTheWeek(day, month, year) {
     return weekday[new Date(`${day}/${month}/${year}`).getDay()];
 }
 
-function fetchWeatherData() {
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityInput}&appid=${apiKey}&units=metric`)
+function fetchWeatherData(param1, param2) {
+    let url;
+    if (typeof param1 === "string") {
+        // Fetch by city name
+        url = `https://api.openweathermap.org/data/2.5/weather?q=${param1}&appid=${apiKey}&units=metric`;
+    } else {
+        // Fetch by coordinates
+        url = `https://api.openweathermap.org/data/2.5/weather?lat=${param1}&lon=${param2}&appid=${apiKey}&units=metric`;
+    }
+
+    fetch(url)
         .then(response => {
             if (!response.ok) {
                 throw new Error("City not found");
@@ -89,5 +127,4 @@ function fetchWeatherData() {
         });
 }
 
-fetchWeatherData();
-app.style.opacity = "1";
+getLocation();
