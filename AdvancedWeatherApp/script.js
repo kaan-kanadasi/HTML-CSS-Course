@@ -49,7 +49,7 @@ form.addEventListener("submit", (e) => {
         alert("Please type in a city name")
     } else {
         cityInput = search.value;
-        fetchWeatherData();
+        fetchWeatherData(cityInput);
         search.value = "";
         app.style.opacity = "0";
     }
