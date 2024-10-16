@@ -2,8 +2,9 @@
 const headerText = document.querySelector("h1");
 const header = document.querySelector(".header");
 const img = document.getElementById("html-icon");
-
-
+let welcomeButton = document.querySelector("button");
+let myMessage = document.querySelector(".welcome-message");
+  
 let index = 0;
 const nameArr = ["HTML - Hyper Text Markup Language", "CSS - Cascading Style Sheets", "JS - Java Script"];
 const imageArr = ["images/html-icon.png", "images/css-icon.png", "images/js-icon.png"];
@@ -31,5 +32,19 @@ header.addEventListener("click", () => {
             img.style.width = "50px";
         }
     }, 200)
-
 });
+
+
+function setUserName() {
+    const myName = prompt("Please enter your name.");
+    if (!myName) {
+      setUserName();
+    } else {
+      localStorage.setItem("name", myName);
+      myMessage.textContent = `Welcome to my website, ${myName}`;
+    }
+}
+  
+welcomeButton.onclick = () => {
+    setUserName();
+};  
