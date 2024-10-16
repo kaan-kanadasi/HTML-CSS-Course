@@ -1,68 +1,85 @@
-// by using a function called querySelector() to grab a reference to your heading, and then store it in a variable called myHeading
-const headerText = document.querySelector("h1");
-const header = document.querySelector(".header");
-const img = document.getElementById("html-icon");
-const darkModeToggle = document.getElementById("dark-mode-toggle");
-const welcomeButton = document.getElementById("change-user-name");
-const myMessage = document.querySelector(".welcome-message");
-const nameArr = ["HTML - Hyper Text Markup Language", "CSS - Cascading Style Sheets", "JS - Java Script"];
-const imageArr = ["images/html-icon.png", "images/css-icon.png", "images/js-icon.png"];
-let index = 0;
+class Website {
+    constructor() {
+        // by using a function called querySelector() to grab a reference to your heading, and then store it in a variable called myHeading
+        this.headerText = document.querySelector("h1");
+        this.header = document.querySelector(".header");
+        this.img = document.getElementById("html-icon");
+        this.darkModeToggle = document.getElementById("dark-mode-toggle");
+        this.welcomeButton = document.getElementById("change-user-name");
+        this.myMessage = document.querySelector(".welcome-message");
+        this.nameArr = ["HTML - Hyper Text Markup Language", "CSS - Cascading Style Sheets", "JS - Java Script"];
+        this.imageArr = ["images/html-icon.png", "images/css-icon.png", "images/js-icon.png"];
+        this.index = 0;
 
+        this.init()
+    }
 
-headerText.textContent = nameArr[index];
-img.src = imageArr[index];
+    changeHeader() {
+        this.headerText.textContent = this.nameArr[this.index];
+        this.img.src = this.imageArr[this.index];
+        /*
+        if(nameArr[this.index] === 'JS - Java Script') { img.style.width = "100px"; } 
+        else { img.style.width = "50px"; } 
+        */
+       this.img.style.width = (this.nameArr[this.index] === 'JS - Java Script') ? "100px" : "50px";
+    }
 
-header.addEventListener("click", () => {
-    index = (index + 1) % nameArr.length;
+    toggleVisibility(element) {
+        element.classList.add("hidden");
+        setTimeout(() => {
+            this.changeHeader()
+            element.classList.remove('hidden');
+        }, 200);
+    }
 
-    // hide current text and image
-    headerText.classList.add('hidden');
-    img.classList.add('hidden');
-    
-    setTimeout(() => {
-        headerText.textContent = nameArr[index];
-        img.src = imageArr[index];
-
-        headerText.classList.remove('hidden');
-        img.classList.remove('hidden');
-
-        if(nameArr[index] === 'JS - Java Script') {
-            img.style.width = "100px";
+    toggleDarkMode() {
+        document.body.classList.toggle("dark-mode");
+        /*
+        if (document.body.classList.contains("dark-mode")) {
+            this.darkModeToggle.textContent = "Switch to Light Mode";
+            localStorage.setItem("darkMode", "enabled");
         } else {
-            img.style.width = "50px";
+            this.darkModeToggle.textContent = "Switch to Dark Mode";
+            localStorage.setItem("darkMode", "disabled");
         }
-    }, 200)
-});
+        */
+        const modeText = (document.body.classList.contains("dark-mode")) ? "Switch to Light Mode" : "Switch to Dark Mode";
+        this.darkModeToggle.textContent = modeText;
+        localStorage.setItem("darkMode", this.darkModeToggle.textContent.contains("dark-mode") ? "enabled" : "disabled");
+    }
 
+    setUserName() {
+        let myName = prompt("Please enter your name.");
+        if (!myName) {
+          this.setUserName();
+        } else {
+          localStorage.setItem("name", myName);
+          this.myMessage.textContent = `Welcome to my website, ${myName}`;
+        }
+    }
 
-function setUserName() {
-    const myName = prompt("Please enter your name.");
-    if (!myName) {
-      setUserName();
-    } else {
-      localStorage.setItem("name", myName);
-      myMessage.textContent = `Welcome to my website, ${myName}`;
+    addEventListeneres() {
+        this.header.addEventListener('click', () => {
+            this.index = (this.index + 1) % this.nameArr.length;
+            this.toggleVisibility(this.headerText);
+            this.toggleVisibility(this.img);
+        });
+        this.welcomeButton.addEventListener('click', () => this.setUserName());
+        this.darkModeToggle.addEventListener('click', () => this.toggleDarkMode());
+    }
+
+    initializeDarkMode() {
+        if (localStorage.getItem("darkMode") === "enabled") {
+            document.body.classList.add("dark-mode");
+            this.darkModeToggle.textContent = "Switch to Light Mode";
+        }
+    }
+
+    init() {
+        this.changeHeader();
+        this.initializeDarkMode();
+        this.addEventListeneres();
     }
 }
-  
-welcomeButton.onclick = () => {
-    setUserName();
-};  
 
-
-if (localStorage.getItem("darkMode") === "enabled") {
-    document.body.classList.add("dark-mode");
-    darkModeToggle.textContent = "Switch to Light Mode";
-}
-
-darkModeToggle.addEventListener("click", () => {
-    document.body.classList.toggle("dark-mode");
-    if (document.body.classList.contains("dark-mode")) {
-        darkModeToggle.textContent = "Switch to Light Mode";
-        localStorage.setItem("darkMode", "enabled");
-    } else {
-        darkModeToggle.textContent = "Switch to Dark Mode";
-        localStorage.setItem("darkMode", "disabled");
-    }
-});
+const myWebsite = new Website();
