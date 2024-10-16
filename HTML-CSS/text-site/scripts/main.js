@@ -45,7 +45,7 @@ class Website {
         */
         const modeText = (document.body.classList.contains("dark-mode")) ? "Switch to Light Mode" : "Switch to Dark Mode";
         this.darkModeToggle.textContent = modeText;
-        localStorage.setItem("darkMode", this.darkModeToggle.textContent.contains("dark-mode") ? "enabled" : "disabled");
+        localStorage.setItem("darkMode", this.body.classList.contains("dark-mode") ? "enabled" : "disabled");
     }
 
     setUserName() {
@@ -58,7 +58,7 @@ class Website {
         }
     }
 
-    addEventListeneres() {
+    addEventListeners() {
         this.header.addEventListener('click', () => {
             this.index = (this.index + 1) % this.nameArr.length;
             this.toggleVisibility(this.headerText);
@@ -78,7 +78,7 @@ class Website {
     init() {
         this.changeHeader();
         this.initializeDarkMode();
-        this.addEventListeneres();
+        this.addEventListeners();
     }
 }
 
