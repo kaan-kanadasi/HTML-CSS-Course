@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <!-- sets the character set your document should use to UTF-8 which includes most characters from the vast majority of written languages -->
+    <meta charset="UTF-8">
+    <!-- This viewport element ensures the page renders at the width of viewport, preventing mobile 
+     browsers from rendering pages wider than the viewport and then shrinking them down-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My test page</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" />
+    <link href="styles/styles.css" rel="stylesheet" />
+</head>
+    <body>
+        <header class="header">
+            <h1>HTML - Hyper Text Markup Language</h1>
+            <!-- Some elements have no content and are called void elements. contains two attributes, but there is no closing 
+            </img> tag and no inner content. This is because an image element doesn't wrap content to affect it. I-->
+            <!-- the alt (alternative) attribute, you specify descriptive text for users who cannot see the image -->
+            <img src="images/html-icon.png" alt="html logo: dispalying the html language's icon" width="50px" id="html-icon">
+        </header>
+        <div class="text-body">
+            <p>This is a <strong>testing site</strong> to understand web developement. 
+                The <code class="code">&lt;strong&gt;</code> tag makes text bold.</p>
+            <section>
+                <pre><code>function hello() {
+                    console.log("Hello, World!");   
+            }</code></pre>
+            </section>
+            <ul>
+                <li>Unordered lists - <code class="code">&lt;ul&gt;</code></li>
+                <li>Ordered lists - <code class="code">&lt;ol&gt;</code></li>
+                <li>List item - <code class="code">&lt;li&gt;</code></li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics">Source-Link</a></li>
+            </ul>
+        </div>
+        <script src="scripts/main.js"></script>
+    </body>
+</html>
