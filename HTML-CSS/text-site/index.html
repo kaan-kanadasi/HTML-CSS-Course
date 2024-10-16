@@ -3,12 +3,19 @@
 <head>
     <!-- sets the character set your document should use to UTF-8 which includes most characters from the vast majority of written languages -->
     <meta charset="UTF-8">
+    <meta name="author" content="Kaan Kandasi">
+    <meta property="og:description" content="This is a website to test my knowledge of web developement" />
+    <meta property="og:title" content="My Test Page" />
+    <meta name="description" content="This is a website to test my knowledge of web developement"> 
     <!-- This viewport element ensures the page renders at the width of viewport, preventing mobile 
      browsers from rendering pages wider than the viewport and then shrinking them down-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My test page</title>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" />
-    <link href="styles/styles.css" rel="stylesheet" />
+    <title>My Test Page</title>
+    <link rel="icon" href="images/html-icon.png" type="image/x-icon"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans"/>
+    <link rel="stylesheet" href="styles/styles.css"/>
+    <!-- defer instructs the browser to load the JavaScript after the page has finished parsing the HTML-->
+    <script src="scripts/main.js" defer></script>
 </head>
     <body>
         <div class="settings-top"> 
@@ -36,7 +43,14 @@
                 <li>List item - <code class="code">&lt;li&gt;</code></li>
                 <li><a href="https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics">Source-Link</a></li>
             </ul>
+            <h3>The Crushing Bore <span lang="ja">ご飯が熱い</span></h1>
+            <p>
+                I'm creating a link to
+                <a 
+                    href="https://www.mozilla.org/en-US/"
+                    title="The best place to find more information about Mozilla's mission and how to contribute">
+                    the Mozilla homepage</a>.</p>
+
         </div>
-        <script src="scripts/main.js"></script>
     </body>
 </html>
