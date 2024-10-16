@@ -11,6 +11,10 @@
     <link href="styles/styles.css" rel="stylesheet" />
 </head>
     <body>
+        <div class="settings-top"> 
+            <button id="dark-mode-toggle">Switch to Dark Mode</button>
+            <button id="change-user-name">Change User</button>
+        </div> 
         <header class="header">
             <h1>HTML - Hyper Text Markup Language</h1>
             <!-- Some elements have no content and are called void elements. contains two attributes, but there is no closing 
@@ -19,13 +23,12 @@
             <img src="images/html-icon.png" alt="html logo: dispalying the html language's icon" width="50px" id="html-icon">
         </header>
         <div class="text-body">
-            <button>Change User</button>
-            <p class="welcome-message"></p>
-            <p>This is a <strong>testing site</strong> to understand web developement. 
+            <div class="text">
+                <p class="welcome-message"></p>
+                <p>This is a <strong>testing site</strong> to understand web developement. 
+            </div>
             <section>
-                <pre><code>function hello() {
-    console.log("Hello, World!");   
-}</code></pre>
+                <pre><code>function hello() { console.log("Hello, World!"); }</code></pre>
             </section>
             <ul>
                 <li>Unordered lists - <code class="code">&lt;ul&gt;</code></li>

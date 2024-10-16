@@ -2,12 +2,13 @@
 const headerText = document.querySelector("h1");
 const header = document.querySelector(".header");
 const img = document.getElementById("html-icon");
-let welcomeButton = document.querySelector("button");
-let myMessage = document.querySelector(".welcome-message");
-  
-let index = 0;
+const darkModeToggle = document.getElementById("dark-mode-toggle");
+const welcomeButton = document.getElementById("change-user-name");
+const myMessage = document.querySelector(".welcome-message");
 const nameArr = ["HTML - Hyper Text Markup Language", "CSS - Cascading Style Sheets", "JS - Java Script"];
 const imageArr = ["images/html-icon.png", "images/css-icon.png", "images/js-icon.png"];
+let index = 0;
+
 
 headerText.textContent = nameArr[index];
 img.src = imageArr[index];
@@ -48,3 +49,20 @@ function setUserName() {
 welcomeButton.onclick = () => {
     setUserName();
 };  
+
+
+if (localStorage.getItem("darkMode") === "enabled") {
+    document.body.classList.add("dark-mode");
+    darkModeToggle.textContent = "Switch to Light Mode";
+}
+
+darkModeToggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+    if (document.body.classList.contains("dark-mode")) {
+        darkModeToggle.textContent = "Switch to Light Mode";
+        localStorage.setItem("darkMode", "enabled");
+    } else {
+        darkModeToggle.textContent = "Switch to Dark Mode";
+        localStorage.setItem("darkMode", "disabled");
+    }
+});
