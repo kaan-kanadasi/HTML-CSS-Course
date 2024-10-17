@@ -27,7 +27,7 @@ class Website {
     toggleVisibility(element) {
         element.classList.add("hidden");
         setTimeout(() => {
-            this.changeHeader()
+            this.changeHeader();
             element.classList.remove('hidden');
         }, 200);
     }
@@ -45,7 +45,7 @@ class Website {
         */
         const modeText = (document.body.classList.contains("dark-mode")) ? "Switch to Light Mode" : "Switch to Dark Mode";
         this.darkModeToggle.textContent = modeText;
-        localStorage.setItem("darkMode", this.body.classList.contains("dark-mode") ? "enabled" : "disabled");
+        localStorage.setItem("darkMode", this.document.body.classList.contains("dark-mode") ? "enabled" : "disabled");
     }
 
     setUserName() {

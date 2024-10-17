@@ -58,7 +58,7 @@ section:hover {
   display: flex;
   flex-direction: row;
   padding: 5px;
-  background-color: rgb(202, 189, 189);
+  background-color: lightgray;
   border-radius: 3px;
   align-items: center;
   justify-content: center;
@@ -67,7 +67,7 @@ section:hover {
 }
 
 .header:hover {
-  background-color: rgb(183, 169, 169);
+  background-color: rgb(196, 196, 196);
 }
 
 .header h1{
