@@ -1,5 +1,5 @@
 body {
-    height: 100hv;
+    height: 100vh;
     width: 100vw;
     background-color: black;
     margin: 0rem;
@@ -20,4 +20,10 @@ body {
     left: 50%;
     top: 50%;
     transform: translate(0%, -50%);
+}
+
+img {
+    user-select: none;
+    pointer-events: none; /* Prevent interaction */
+    -webkit-user-drag: none; /* Disable image drag on WebKit browsers */
 }
